@@ -1,12 +1,11 @@
 
 function makeGrid(cellPerSide) {
 
-    const gridWidth = 500;
-    const gridHeight = 500;
-    
     const conContainer = document.getElementById('content')
     const grid = document.createElement('div');
-    
+
+    const gridWidth = 500;
+    const gridHeight = 500;
     
     grid.style.width = `${gridWidth}px`;
     grid.style.height = `${gridHeight}px`;
@@ -15,23 +14,23 @@ function makeGrid(cellPerSide) {
     var cellSize = gridWidth/cellPerSide
 
     // creates rows
-    for (let i = 1; i < cellPerSide; i++) {
+    for (let i = 0; i < cellPerSide; i++) {
 
         const row = document.createElement('div')
         row.id ='row'
         row.style.width = `${gridWidth}px`;
         row.style.height = `${cellSize}px`;
-        row.style.border = '1px solid red';
-        row.flexDirection = 'column';
 
         // creates the cells
-        for (let j = 1; j < cellPerSide; j ++) {
+        for (let j = 0; j < cellPerSide; j ++) {
 
             const cell = document.createElement('div')
             cell.id ='cell'
             cell.style.width = `${cellSize}px`;
             cell.style.height = `${cellSize}px`;
-    
+            cell.style.border = '1px solid black;'
+            cell.style.display = 'table-cell';
+            
             row.appendChild(cell)
         }
         
@@ -41,4 +40,4 @@ function makeGrid(cellPerSide) {
 
 }
 
-makeGrid(16);
+makeGrid(9);
