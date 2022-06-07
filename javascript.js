@@ -1,4 +1,7 @@
 
+makeGrid(9);
+colorCells();
+
 function makeGrid(cellPerSide) {
 
     const conContainer = document.getElementById('content')
@@ -31,13 +34,24 @@ function makeGrid(cellPerSide) {
             cell.style.border = '1px solid black;'
             cell.style.display = 'table-cell';
             
-            row.appendChild(cell)
+            row.appendChild(cell);
         }
-        
-        grid.appendChild(row)
+        grid.appendChild(row);
+
     }
-    conContainer.appendChild(grid)
+    conContainer.appendChild(grid);
 
 }
 
-makeGrid(9);
+function colorCells() {
+
+    const cells = document.querySelectorAll('#cell')
+
+    cells.forEach(cell => {
+        cell.addEventListener('click', event => {
+            cell.style.backgroundColor ='black';
+        })
+        
+    })
+
+}
